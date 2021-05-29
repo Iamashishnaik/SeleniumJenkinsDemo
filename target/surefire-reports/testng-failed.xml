@@ -8,9 +8,8 @@
     <classes>
       <class name="Academy.HomePage">
         <methods>
-          <include name="basePageNavigation" invocation-numbers="0"/>
+          <include name="basePageNavigation"/>
           <include name="initialize"/>
-          <include name="teardown"/>
         </methods>
       </class> <!-- Academy.HomePage -->
     </classes>

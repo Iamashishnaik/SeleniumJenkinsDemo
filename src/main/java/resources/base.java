@@ -28,13 +28,11 @@ String browserName=prop.getProperty("browser");
 System.out.println(browserName);
 
 if(browserName.equals("chrome"))
-{ChromeOptions chromeOptions= new ChromeOptions();//jenkins set up
-chromeOptions.setBinary("C://chromedriver.exe"); //jenkins set up
+{//jenkins set up
 
-ChromeDriver driver = new ChromeDriver(chromeOptions);
+
 	 System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-	driver= new ChromeDriver(chromeOptions); //chromeoption is for jenkins set up
-		//execute in chrome driver
+	driver= new ChromeDriver(); 
 	
 }
 else if (browserName.equals("firefox"))
