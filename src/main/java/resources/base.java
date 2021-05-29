@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -20,16 +21,19 @@ public WebDriver initializeDriver() throws IOException
 {
 	
  prop= new Properties();
-FileInputStream fis=new FileInputStream("C:\\Users\\rahul\\E2EProject\\src\\main\\java\\resources\\data.properties");
+FileInputStream fis=new FileInputStream("C:\\Users\\DELL\\OneDrive\\Desktop\\selenium_project\\New folder\\E2EProject\\src\\main\\java\\resources\\data.properties");
 
 prop.load(fis);
 String browserName=prop.getProperty("browser");
 System.out.println(browserName);
 
 if(browserName.equals("chrome"))
-{
+{ChromeOptions chromeOptions= new ChromeOptions();//jenkins set up
+chromeOptions.setBinary("C://chromedriver.exe"); //jenkins set up
+
+ChromeDriver driver = new ChromeDriver(chromeOptions);
 	 System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-	driver= new ChromeDriver();
+	driver= new ChromeDriver(chromeOptions); //chromeoption is for jenkins set up
 		//execute in chrome driver
 	
 }
