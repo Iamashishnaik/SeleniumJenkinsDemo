@@ -29,10 +29,12 @@ System.out.println(browserName);
 
 if(browserName.equals("chrome"))
 {//jenkins set up
+	ChromeOptions chromeOptions= new ChromeOptions(); 
 
+	chromeOptions.setBinary("C:\\Users\\DELL\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
 
 	 System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
-	driver= new ChromeDriver(); 
+	driver= new ChromeDriver(chromeOptions); 
 	
 }
 else if (browserName.equals("firefox"))
